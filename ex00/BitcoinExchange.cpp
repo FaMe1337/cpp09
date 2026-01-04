@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:00:14 by toferrei          #+#    #+#             */
-/*   Updated: 2026/01/04 12:55:40 by marvin           ###   ########.fr       */
+/*   Updated: 2026/01/04 16:34:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ BitcoinExchange::BitcoinExchange(std::fstream *inputFile, std::fstream *dataBase
 {
 	std::string strtmp, btcValue;
 	float value;
+	char *Nullpointer = NULL;
 	int key;
 
 	while (std::getline(*inputFile, strtmp))
@@ -63,13 +64,12 @@ BitcoinExchange::BitcoinExchange(std::fstream *inputFile, std::fstream *dataBase
 		{
 			key = datetoint(strtmp.substr(0, strtmp.find(",")));
 			btcValue = strtmp.substr(strtmp.find(",") + 1);
-			value = std::strtof(btcValue.c_str(), &errCheck);
-			if (!btcValue)
+			value = std::strtof(btcValue.c_str(), &Nullpointer);
+			if (Nullpointer == btcValue.c_str())
 				throw BitcoinExchange::FailedConvertion();
 			this->_dataBase.insert(std::make_pair(key, value));
 		}
 	}
-
 	int i = 0;
 	while (std::getline(*dataBaseToCompare, strtmp))
 	{
@@ -150,10 +150,11 @@ void isDateValid(std::string date)
 
 float isValueValid(std::string input)
 {
+	char *Nullpointer;
 	float value;
 
-	value = std::strtof(input.c_str(), &errCheck);
-	if (!input)
+	value = std::strtof(input.c_str(), &Nullpointer);
+	if (Nullpointer == input.c_str())
 		throw BitcoinExchange::FailedConvertion();
 	if (value < 0)
 		throw BitcoinExchange::NegativeValue();

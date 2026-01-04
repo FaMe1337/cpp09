@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 11:50:08 by toferrei          #+#    #+#              #
-#    Updated: 2025/12/26 14:54:58 by marvin           ###   ########.fr        #
+#    Updated: 2026/01/04 15:19:09 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -f
 
-NAME        = BitCoin
+NAME        = Bitcoin
 
-INCLUDES    = BitCoinExchange.hpp
+INCLUDES    = BitcoinExchange.hpp
 
-SRCS        = main.cpp
+SRCS        = main.cpp BitcoinExchange.cpp
 
 OBJS        = $(SRCS:.cpp=.o)
 

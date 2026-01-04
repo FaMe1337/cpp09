@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:56:09 by toferrei          #+#    #+#             */
-/*   Updated: 2025/10/31 17:41:35 by toferrei         ###   ########.fr       */
+/*   Updated: 2026/01/04 13:13:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # define BITCOINEXCHANGE_HPP
 
 #include <map>
-#include <string>
 #include <ctime>
 #include <fstream>
 #include <iostream>
