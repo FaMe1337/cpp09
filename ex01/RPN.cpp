@@ -49,23 +49,6 @@ void RPN::calculate(double a, double b, char c)
 		throw RPN::DivisionByZero();
 }
 
-/*		Alternative "Rigid" Parser (only accepts a string to a certain format digit or )
-
-	for (std::string::iterator it = input.begin(); it <= input.end(); ++it)
-	{
-		if (isdigit(*it))
-			numbers++;
-		else if (input.size() > 1 && (*it == '+' || *it == '-' || *it == '*' || *it == '/'))
-			symbols++;
-		else
-			throw RPN::InvalidInput();
-		++it;
-		std::cout << *it << std::endl;
-		if (input.size() > 1 && it < input.end() && *it != ' ')
-			throw RPN::InvalidInput();
-	}
-*/
-
 RPN::RPN(std::string input)
 {
 	size_t symbols(0), numbers(0);
@@ -127,4 +110,5 @@ const char *RPN::InvalidInput::what() const throw()
 const char *RPN::DivisionByZero::what() const throw()
 {
 	return ("Division by zero");
+
 }
